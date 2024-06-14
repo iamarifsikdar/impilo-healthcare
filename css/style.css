@@ -1,0 +1,355 @@
+/*
+    =Fonts
+*/
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-Bold.ttf);
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-Medium.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-Light.ttf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Gilroy";
+    src: url(../fonts/Gilroy-Thin.ttf);
+    font-weight: 100;
+}
+
+/*
+    =Resets
+*/
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+/*
+    =Variables
+*/
+
+:root {
+    /*
+        =Fonts
+    */
+    --FF: "Gilroy", sans-serif;
+    --FS: clamp(1rem, 2.2vh, 1.5rem);
+
+    /*
+        =Colors
+    */
+    --PRIMARY-COLOR: #413cd6;
+    --PRIMARY-LIGHT-COLOR: #0baaf3;
+    --SECONDARY-COLOR: #16165d;
+    --SECONDARY-COLOR-LIGHT: #212172;
+    --BORDER-COLOR-BUTTON: #5351cc;
+    --FONT-COLOR: #ffffff;
+    --FONT-SECONDARY-COLOR: #08fbb1;
+    --BUTTON-BG: #ffffff;
+
+    /*
+        =Borders
+    */
+    --BORDER-BUTTON: 0.4rem solid var(--BORDER-COLOR-BUTTON);
+    --BORDER-RADIUS-BUTTON: 2rem;
+    --BORDER-PRIMARY-LIGHT: 1px solid var(--PRIMARY-LIGHT-COLOR);
+    --BORDER-RADIUS: 15px;
+
+    /*
+        =Standard Paddings
+    */
+    --PADDING-TB: 1em;
+    --PADDING-SIDE: 2.5%;
+
+    /*
+        =Standard Margins
+    */
+    --MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
+}
+
+/*
+    =Utility classes
+*/
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.center {
+    text-align: center;
+}
+
+/*
+    =General Styles
+*/
+html {
+    scroll-behavior: smooth;
+    font-size: var(--FS);
+    font-family: var(--FF);
+    background-color: var(--PRIMARY-COLOR);
+}
+
+body {
+    color: var(--FONT-COLOR);
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+p {
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+article {
+    padding: 0 5rem;
+    margin: 4rem 0;
+}
+
+a:any-link {
+    color: var(--FONT-COLOR);
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--FONT-SECONDARY-COLOR);
+}
+
+a:active {
+    color: var(--FONT-SECONDARY-COLOR);
+}
+
+.arrow {
+    margin-right: 1rem;
+}
+
+.arrow:hover {
+    margin-right: 0.5rem;
+}
+
+.logo {
+    width: 100px;
+}
+
+.btn {
+    background-color: var(--BUTTON-BG);
+    border: var(--BORDER-BUTTON);
+    border-radius: var(--BORDER-RADIUS-BUTTON);
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    color: var(--SECONDARY-COLOR);
+}
+
+.btn-secondary {
+    background-color: var(--BUTTON-BG);
+    border: none;
+    border-radius: var(--BORDER-RADIUS-BUTTON);
+    height: 3rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 400;
+    color: var(--SECONDARY-COLOR);
+}
+
+/*
+    =Header
+*/
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--PADDING-TB) 5rem;
+}
+
+.header__nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.header__button {
+    margin-left: 1.5rem;
+}
+
+.header__ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    gap: clamp(1rem, 6vw, 4rem);
+    padding: var(--PADDING-TB) 0;
+    font-weight: 500;
+}
+
+.header__ul li:hover .arrow {
+    margin-right: 0.5rem;
+}
+
+/*
+    =Hero
+*/
+
+.hero-image {
+    width: 800px;
+    position: relative;
+    top: 30px;
+    left: -150px;
+}
+
+.hero {
+    padding: 0 5rem;
+    display: flex;
+}
+
+.hero__h1 {
+    font-size: 5rem;
+    font-weight: 500;
+}
+
+.box-text {
+    width: 80%;
+    color: var(--FONT-SECONDARY-COLOR);
+    border: var(--BORDER-PRIMARY-LIGHT);
+    border-style: dotted;
+    border-radius: var(--BORDER-RADIUS);
+    padding: var(--PADDING-SIDE);
+}
+
+.hero__p {
+    margin: var(--MARGIN) 0;
+    width: 40%;
+    font-size: var(--FS);
+}
+
+.hero__dashboard {
+    width: 100%;
+    margin: var(--MARGIN) 0;
+}
+
+.hero__content figure {
+    position: relative;
+}
+
+.hero__content figure p {
+    color: var(--FONT-SECONDARY-COLOR);
+    font-size: clamp(1rem, 2.2vw, 3rem);
+    font-weight: 500;
+    position: absolute;
+    top: 33%;
+    right: 7%;
+}
+
+/*
+    =Remaining Hero
+*/
+
+.remaining-hero img {
+    width: 100%;
+}
+
+.remaining-hero figure {
+    position: relative;
+}
+
+.remaining-hero figure p {
+    color: var(--FONT-SECONDARY-COLOR);
+    font-size: clamp(1rem, 2.8vw, 4rem);
+    font-weight: 500;
+    position: absolute;
+    top: 27%;
+    right: 7%;
+}
+
+.remaining-hero .article__h1 {
+    font-size: clamp(2rem, 6vw, 7rem);
+    font-weight: 500;
+    padding: var(--PADDING-SIDE);
+}
+
+.remaining-hero .btn-secondary {
+    display: block;
+    margin: 0 auto;
+    width: clamp(24rem, 25vw, 28rem);
+    text-transform: uppercase;
+    position: relative;
+}
+
+.remaining-hero .btn-secondary::before {
+    content: url(../images/beat.png);
+    position: absolute;
+    top: 0px;
+    left: 5px;
+}
+
+.remaining-hero .btn-secondary::after {
+    content: url(../images/beat.png);
+    position: absolute;
+    top: 0px;
+    right: 5px;
+}
+
+/*
+    =Working Process
+*/
+.working-process {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--FONT-COLOR);
+}
+
+.working-process .article__h2 {
+    text-align: center;
+    font-size: clamp(1rem, 4vw, 3.5rem);
+    font-weight: 500;
+    color: var(--SECONDARY-COLOR);
+}
+
+.working-process .article__h2 .btn {
+    font-size: var(--FS);
+}
+
+/*
+    =About Impilo
+*/
+
+.about-summary {
+    margin-top: 0;
+    background-color: var(--SECONDARY-COLOR-LIGHT);
+    display: flex;
+    gap: 0.2rem;
+}
